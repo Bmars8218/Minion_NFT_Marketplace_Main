@@ -14,13 +14,13 @@
     "@solana/web3.js": "^1.91.4",
     "@types/bcrypt": "^5.0.2",
     "@types/firebase": "^3.2.1",
-    "axios": "^1.6.8",
+    "axios": "^1.7.4",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "firebase": "^10.10.0",
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",
-    "next": "14.1.2",
+    "next": "14.2.35",
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
@@ -28,6 +28,14 @@
     "react-toastify": "^10.0.5",
     "react-verification-input": "^4.1.1",
     "resend": "^3.2.0"
+  },
+  "resolutions": {
+    "undici": "^5.28.4",
+    "braces": "^3.0.3",
+    "@grpc/grpc-js": "^1.9.15",
+    "jayson/ws": "7.5.11",
+    "micromatch": "^4.0.8",
+    "cross-spawn": "^7.0.5"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.6",
