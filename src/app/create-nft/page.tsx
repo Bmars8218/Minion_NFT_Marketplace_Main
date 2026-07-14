@@ -14,7 +14,7 @@ const NFT = () => {
   const { network, walletID } = useWallet();
   const router = useRouter();
 
-  const xKey = process.env.NEXT_PUBLIC_API_KEY.toString();
+  const xKey = (process.env.NEXT_PUBLIC_API_KEY ?? "");
   const endPoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
   const [file, setFile] = useState(null);

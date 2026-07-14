@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const Marketplace = () => {
   const router = useRouter();
   const { network, walletID } = useWallet();
-  const xKey = process.env.NEXT_PUBLIC_API_KEY.toString();
+  const xKey = (process.env.NEXT_PUBLIC_API_KEY ?? "");
   const endPoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
   const [NFTs, setNFTs] = useState([]);

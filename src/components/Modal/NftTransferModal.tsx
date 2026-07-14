@@ -21,7 +21,7 @@ const NftTransferModal = () => {
 
   const handleTransfer = () => {
     setIsLoading(true);
-    const xKey = process.env.NEXT_PUBLIC_API_KEY.toString();
+    const xKey = (process.env.NEXT_PUBLIC_API_KEY ?? "");
     const endPoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
     if (address === "") {

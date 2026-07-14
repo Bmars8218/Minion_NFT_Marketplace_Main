@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["cdn.sanity.io", "pbs.twimg.com", "f005.backblazeb2.com", "nftstorage.link"],
-  },
-  devIndicators: {
-    buildActivity: false,
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn.sanity.io" },
+      { protocol: "https", hostname: "pbs.twimg.com" },
+      { protocol: "https", hostname: "f005.backblazeb2.com" },
+      { protocol: "https", hostname: "nftstorage.link" },
+    ],
   },
   webpack(config) {
     config.module.rules.push({

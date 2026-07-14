@@ -2,18 +2,19 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import axios from "axios";
 import { useSettingModal } from "@/providers/SettingModalProvider";
 import { useWallet } from "@/providers/WalletProvider";
 import { toast } from "react-toastify";
 import Spinner from "@/components/notification/message/spinner";
 
-const NFT = ({ params: { id } }) => {
+const NFT = () => {
+  const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const { nftListModal, nftUnListModal, setNftListModal, setNftUnListModal } = useSettingModal();
   const { network, activeNFTs, setSelectedNFT } = useWallet();
-  const xKey = process.env.NEXT_PUBLIC_API_KEY.toString();
+  const xKey = (process.env.NEXT_PUBLIC_API_KEY ?? "");
   const endPoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
   const [NFT, setNFT] = useState({

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import SettingModalProvider from "@/providers/SettingModalProvider";
 import dynamic from "next/dynamic";
-import SiderLoader from "@/components/layout/Sider/loading";
 import { ToastContainer } from "react-toastify";
+import ClientSider from "@/components/layout/ClientSider";
 export const metadata: Metadata = {
   title: "Despicable Minion 4",
   description: "Despicable Minion 4 NFT Marketplace",
@@ -11,10 +11,6 @@ import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import WalletProvider from "@/providers/WalletProvider";
 
-const Sider = dynamic(() => import("@/components/layout/Sider"), {
-  ssr: false,
-  loading: () => <SiderLoader />,
-});
 const Header = dynamic(() => import("@/components/layout/Header"));
 const FriendProfileModal = dynamic(
   () => import("@/components/Modal/FriendProfileModal")
@@ -67,7 +63,7 @@ export default function RootLayout({
             theme="light"
           />
           <WalletProvider>
-            <Sider />
+            <ClientSider />
             <div className="flex-col flex w-full h-full bg-black bg-opacity-10">
               <Header />
               {children}

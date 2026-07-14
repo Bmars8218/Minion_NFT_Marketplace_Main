@@ -16,7 +16,7 @@ const useWalletData = () => {
   }, []);
 
   useEffect(() => {
-    const xKey = process.env.NEXT_PUBLIC_API_KEY.toString();
+    const xKey = (process.env.NEXT_PUBLIC_API_KEY ?? "");
     const endPoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
     const marketplaceAddress = process.env.NEXT_PUBLIC_MARKETPLACE_ADDRESS;
     const nftUrl = `${endPoint}marketplace/active_listings?network=${network}&marketplace_address=${marketplaceAddress}`;
